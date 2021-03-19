@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+//inisialisasi data
+int angka[6]={10,2,1,5,3,6};
+
+void main(){
+	//looping sebanyak jumlah data
+	for(int i=0; i<6; i++){
+		//anggap saja bahwa index ke i adalah angka terkecil
+		int indexNilaiMinimal=i;
+		//looping untuk mencari index/posisi angka yang terkecil
+		//caranya adalah membandingkan angka satu per satu
+		for(int j=i; j<6; j++){
+			//jika ada yang lebih kecil dari angka index ke indexNilaiMinimal
+			if(angka[j]<angka[indexNilaiMinimal]){
+				//maka, ganti indexNilaiMinimal menjadi index angka tersebut
+				indexNilaiMinimal=j;
+			}
+		}
+		//swap value (tukar)
+		int temp=angka[i];
+		angka[i]=angka[indexNilaiMinimal];
+		angka[indexNilaiMinimal]=temp;
+	}
+	//cetak data
+	for(int i=0; i<6; i++){
+		printf("%d ", angka[i]);
+	}
+	getchar();
+}
