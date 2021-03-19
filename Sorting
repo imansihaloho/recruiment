@@ -1,0 +1,28 @@
+
+//inisialisasi data
+int angka[6]={10,2,1,5,3,6};
+
+void main(){
+	//perulangan sebanyak jumlah data
+	for(int i=0; i<6; i++){
+		//anggap saja bahwa index ke i adalah angka terkecil
+		int x=i;
+		//mengurutkan inputan angka
+		for(int j=i; j<6; j++){
+			//jika ada yang lebih kecil dari angka index ke x
+			if(angka[j]<angka[x]){
+				//maka, ganti x menjadi index angka tersebut
+				x=j;
+			}
+		}
+		//swap value (tukar)
+		int temp=angka[i];
+		angka[i]=angka[x];
+		angka[x]=temp;
+	}
+	//cetak data
+	for(int i=0; i<6; i++){
+		printf("%d ", angka[i]);
+	}
+	gets();
+}
