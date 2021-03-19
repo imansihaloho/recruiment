@@ -1,0 +1,21 @@
+*{
+	font-family: verdana;
+}
+
+.banner-bawah{
+  background-size: cover;
+  background-image: url(../barn_house.jpg);
+  height: 500px !important;
+  text-align: center;
+  position: relative;
+  
+
+}
+.banner-atas{
+	background-image: url('../br_architecture.jpg');
+  background-size: cover;
+  height: 500px !important;
+  text-align: center;
+  position: relative;
+  border-bottom: 5px solid #0099ff;
+}
