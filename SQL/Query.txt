@@ -1,0 +1,14 @@
+2.) SELECT s.produk_id, MAX(s.qty)
+FROM (SELECT SUM(a.kuantitas) as qty, a.produk_id FROM penjuala_detail as a LEFT JOIN pelanggan AS b ON a.pelanggan_id = b.id
+      WHERE b.jenis_kelamin = 'pria' GROUP BY a.produk_id) as s
+
+ SELECT s.produk_id, MAX(s.qty)
+FROM (SELECT SUM(a.kuantitas) as qty, a.produk_id FROM penjuala_detail as a LEFT JOIN pelanggan AS b ON a.pelanggan_id = b.id
+      WHERE b.jenis_kelamin = 'wanita' GROUP BY a.produk_id) as s
+
+3.) SELECT s.pelanggan_id, MAX (s.total)
+FROOM (SELECT SUM(a.kuantitas * p.harga) as total, e.pelanggan_id FROM penjuala_detail as a
+	LEFT JOIN penjualan as e ON a.id_penjualan = e.penjualan_id
+	LEFT JOIN pelanggan as b ON e.pelanggan_id = b.id_pelanggan
+	LEFT JOIN produk as p ON a.produk_id = p.produk_id
+	GROUP BY e.pelanggan_id) as s
